@@ -60,7 +60,7 @@ CREATE TABLE `distribuidores` (
   `fechacaptura` VARCHAR(45) NULL,
   PRIMARY KEY (`iddistribuidor`));
 
-  CREATE TABLE `naturalblue`.`tiendas` (
+  CREATE TABLE `tiendas` (
   `idtienda` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `tipo` VARCHAR(45) NULL,

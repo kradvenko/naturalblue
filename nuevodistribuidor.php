@@ -228,7 +228,7 @@
         <div class="row divMargin divCenter">
             <div class="col-4">
                 <label class="switch s-350">
-                    <input id="cbFinalizados" type="checkbox" />
+                    <input id="cbUsuario" type="checkbox" />
                     <span class="slider round">
                         Crear usuario para el sitio web
                     </span>
