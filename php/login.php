@@ -15,7 +15,7 @@
 
         $sql = "Select usuarios.*, tiendas.nombre As tienda, tiendas.tipo As tipotienda, tiendas.prefijo As prefijo
                 From usuarios 
-                Inner Join tiendas
+                Left Join tiendas
                 On tiendas.idtienda = usuarios.idtienda
                 Where usuario = '$u' And pass = '$p' And usuarios.estado = 'ACTIVO'";
 

@@ -10,12 +10,14 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/naturalblue.js"></script>
 
-    <title>Natural blue</title>
+    <title>Veterinaria Vironchi - Inicio</title>
 </head>
 <body>
     <div class="container mainContainer">
-        <div class="row divLogo">
-            <img src="imgs/logo_small.png" />
+        <div class="row divBackgroundBlack">
+            <div class="divLogo">
+
+            </div>
         </div>
         <div class="">
             <div class="menuContainer">
@@ -26,7 +28,7 @@
             </div>
         </div>
         
-        <div class="row divBackgroundOne">
+        <div class="row divBackgroundBlack">
             <div class="col-12 mainFooter">
                 <b>Natural Blue</b> © Derechos Reservados 2018.
             </div>
@@ -36,7 +38,7 @@
 <script>
     $(document).ready(function() {
         checkSession();
-        $("#aMenu").addClass("currentPage");
+        $("#aDistribuidores").addClass("currentPage");
     });
 </script>
 </html>

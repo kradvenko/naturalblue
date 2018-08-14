@@ -8,9 +8,7 @@ CREATE TABLE `usuarios` (
   `pass` varchar(45) DEFAULT NULL,
   `tipo` varchar(45) DEFAULT NULL,
   `estado` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idusuario`)
-);
-
+  PRIMARY KEY (`idusuario`));
 
 CREATE TABLE `colonias` (
   `idcolonia` INT NOT NULL AUTO_INCREMENT,
@@ -18,21 +16,21 @@ CREATE TABLE `colonias` (
   `colonia` VARCHAR(150) NULL,
   PRIMARY KEY (`idcolonia`));
 
-  CREATE TABLE `ciudades` (
-  `idciudad` INT NOT NULL AUTO_INCREMENT,
-  `idestado` INT NULL,
-  `ciudad` VARCHAR(100) NULL,
-  PRIMARY KEY (`idciudad`));
+CREATE TABLE `ciudades` (
+`idciudad` INT NOT NULL AUTO_INCREMENT,
+`idestado` INT NULL,
+`ciudad` VARCHAR(100) NULL,
+PRIMARY KEY (`idciudad`));
 
-  CREATE TABLE `estados` (
-  `idestado` INT NOT NULL AUTO_INCREMENT,
-  `estado` VARCHAR(45) NULL,
-  PRIMARY KEY (`idestado`));
+CREATE TABLE `estados` (
+`idestado` INT NOT NULL AUTO_INCREMENT,
+`estado` VARCHAR(45) NULL,
+PRIMARY KEY (`idestado`));
 
-  CREATE TABLE `bancos` (
-  `idbanco` INT NOT NULL AUTO_INCREMENT,
-  `banco` VARCHAR(45) NULL,
-  PRIMARY KEY (`idbanco`));
+CREATE TABLE `bancos` (
+`idbanco` INT NOT NULL AUTO_INCREMENT,
+`banco` VARCHAR(45) NULL,
+PRIMARY KEY (`idbanco`));
 
 CREATE TABLE `distribuidores` (
   `iddistribuidor` INT NOT NULL AUTO_INCREMENT,
@@ -62,4 +60,21 @@ CREATE TABLE `distribuidores` (
   `fechacaptura` VARCHAR(45) NULL,
   PRIMARY KEY (`iddistribuidor`));
 
+  CREATE TABLE `naturalblue`.`tiendas` (
+  `idtienda` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `tipo` VARCHAR(45) NULL,
+  `prefijo` VARCHAR(5) NULL,
+  `estado` VARCHAR(45) NULL,
+  `idmatriz` INT NULL,
+  PRIMARY KEY (`idtienda`));
+
+ALTER TABLE `distribuidores` 
+CHANGE COLUMN `idcolonia` `colonia` VARCHAR(150) NULL DEFAULT NULL ,
+CHANGE COLUMN `idciudad` `ciudad` VARCHAR(150) NULL DEFAULT NULL ,
+CHANGE COLUMN `idestado` `estado` VARCHAR(20) NULL DEFAULT NULL ,
+CHANGE COLUMN `idbanco` `banco` VARCHAR(30) NULL DEFAULT NULL ;
+
+ALTER TABLE `distribuidores` 
+ADD COLUMN `tieneusuario` VARCHAR(5) NULL AFTER `fechacaptura`;
 

@@ -50,7 +50,7 @@ function userLogin() {
 }
 
 function checkSession() {
-    if (!getCookie("v_idusuario")) {
+    if (!getCookie("nb_idusuario")) {
         document.location = "index.php";
     }
 }

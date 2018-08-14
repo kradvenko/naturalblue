@@ -13,6 +13,7 @@
 body {
     background-image: url(../imgs/pattern57.jpg);
     font-family: 'Montserrat', serif;
+    font-size: 12px;
 }
 
 .mainContainer {
@@ -99,16 +100,17 @@ body {
 .container {
     background: #ffffff;
 }
+
 .divLogo {
     text-align: center;
+    border-bottom: solid 2px #59cef1;
 }
 .divMargin {
     margin-bottom: 5px;
 }
 
 .divBackgroundBlue {    
-    color: #000000;
-    
+    color: #000000;    
     font-size: 20px;
     border-bottom: 3px solid #066983;
     margin-bottom: 20px;
@@ -128,8 +130,8 @@ body {
     font-size: 16px;
 }
 
-.divBackgroundBlack {
-    background-color: #000000;
+.divBackgroundOne {
+    background-color: #59cef1;
 }
 
 .tableLocalidades {
@@ -157,6 +159,11 @@ body {
 
 input {
     text-align: center;
+    font-size: 12px;
+}
+
+.inputUpper {
+    text-transform: uppercase;
 }
 
 .divCenter {
@@ -165,7 +172,6 @@ input {
     align-items: center;
 }
 
-
 .menuContainer {
     text-align: center;
     padding-top: 10px;
@@ -173,6 +179,7 @@ input {
 
 .mainMenu {
     padding: 0;
+    margin-bottom: 15px;
 }
 
 .mainMenuElement {
@@ -726,10 +733,11 @@ input {
     color: #ffffff;
 }
 
-.divBackgroundOrange {    
-    color: #000000;    
+.divBackgroundTwo {    
+    color: #ffffff;    
     font-size: 20px;
-    border-bottom: 3px solid #188db1;
+    border-top: 1px solid #188db1;
+    border-bottom: 1px solid #188db1;
     margin-bottom: 20px;
     background-color: #9ad8eb;
 }
