@@ -7,10 +7,13 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/naturalblue.css" />
     <link rel="stylesheet" type="text/css" href="css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/naturalblue.js"></script>
-    <script src="js/nuevodistribuidor.js"></script>
+    <script src="js/modificardistribuidor.js"></script>
 
     <title>Natural blue</title>
 </head>
@@ -37,7 +40,7 @@
                 Búsqueda
             </div>
             <div class="col-9">
-                <input type="text" class="form-control" id="tbBuscar" placeholder="Nombre o número del distribuidor" />
+                <input type="text" class="form-control" id="tbBuscar" placeholder="Nombre del distribuidor" />
             </div>
         </div>
         <div class="row divMargin divCenter divBackgroundTwo">
@@ -83,6 +86,14 @@
             </div>
             <div class="col-2">
                 <input type="text" class="form-control inputUpper" id="tbNumExterior" />
+            </div>
+        </div>
+        <div class="row divMargin divCenter">
+            <div class="col-1">
+                Entre calles
+            </div>
+            <div class="col-11">
+                <input type="text" class="form-control inputUpper" id="tbEntreCalles" />
             </div>
         </div>
         <div class="row divMargin divCenter">
@@ -241,7 +252,7 @@
         <div class="row divMargin divCenter">
             <div class="col-4">
                 <label class="switch s-350">
-                    <input id="cbFinalizados" type="checkbox" />
+                    <input id="cbUsuario" type="checkbox" onchange="verificarCreacionUsuario()" />
                     <span class="slider round">
                         Tiene usuario para el sitio web
                     </span>
@@ -251,13 +262,13 @@
                 Usuario
             </div>
             <div class="col-3">
-                <input type="text" class="form-control inputUpper" id="tbUsuario" />
+                <input type="text" class="form-control inputUpper" id="tbUsuario" disabled="disabled" />
             </div>
             <div class="col-1">
                 Contraseña
             </div>
             <div class="col-3">
-                <input type="text" class="form-control inputUpper" id="tbPassword" />
+                <input type="text" class="form-control inputUpper" id="tbPassword" disabled="disabled" />
             </div>
         </div>
         <div class="row divMargin">
@@ -274,10 +285,10 @@
 
             </div>
             <div class="col-2">
-                <button type="button" class="btn btn-secondary" onclick="limpiarCamposNuevoDistribuidor()">Limpiar campos</button>
+                <button type="button" class="btn btn-secondary" onclick="limpiarCamposModificarDistribuidor()">Limpiar campos</button>
             </div>
             <div class="col-2">
-                <button type="button" class="btn btn-success" onclick="agregarNuevoDistribuidor()">Guardar cambios</button>
+                <button type="button" class="btn btn-success" onclick="modificarDistribuidor()">Guardar cambios</button>
             </div>
         </div>
 
@@ -290,9 +301,31 @@
 </body>
 <script>
     $(document).ready(function() {
-        limpiarCamposNuevoDistribuidor();
+        limpiarCamposModificarDistribuidor();
         checkSession();
         $("#aDistribuidores").addClass("currentPage");
+    });
+    $(function() {     
+        $("#tbBuscar").autocomplete({
+            source: "php/obtenerDistribuidoresJSON.php",
+            minLength: 2,
+            select: function(event, ui) {
+                elegirDistribuidor(ui.item.id, ui.item.value);
+                //this.value = '';
+                //return false;
+            }
+        });
+    });
+    $(function() {     
+        $("#tbPatrocinador").autocomplete({
+            source: "php/obtenerDistribuidoresJSON.php",
+            minLength: 2,
+            select: function(event, ui) {
+                elegirPatrocinador(ui.item.id, ui.item.value);
+                //this.value = '';
+                //return false;
+            }
+        });
     });
 </script>
 </html>

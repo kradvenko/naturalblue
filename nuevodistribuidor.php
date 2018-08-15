@@ -7,8 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/naturalblue.css" />
     <link rel="stylesheet" type="text/css" href="css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css" />
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/naturalblue.js"></script>
     <script src="js/nuevodistribuidor.js"></script>
 
@@ -288,6 +291,17 @@
         limpiarCamposNuevoDistribuidor();
         checkSession();
         $("#aDistribuidores").addClass("currentPage");
+    });
+    $(function() {     
+        $("#tbPatrocinador").autocomplete({
+            source: "php/obtenerDistribuidoresJSON.php",
+            minLength: 2,
+            select: function(event, ui) {
+                elegirPatrocinador(ui.item.id, ui.item.value);
+                //this.value = '';
+                //return false;
+            }
+        });
     });
 </script>
 </html>

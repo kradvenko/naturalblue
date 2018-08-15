@@ -1,7 +1,8 @@
-//Variables para el módulo de nuevo distribuidor
-var nd_IdPatrocinador = 0;
-//Fuciones para el módulo de nuevo dsitribuidor
-function limpiarCamposNuevoDistribuidor() {
+//Variables para el módulo de modificación de distribuidor
+var md_IdPatrocinador = 0;
+var md_IdDistribuidor = 0;
+//Fuciones para el módulo de modificación de distribuidor
+function limpiarCamposModificarDistribuidor() {
     $("#tbNombre").val("");
     $("#tbPaterno").val("");
     $("#tbMaterno").val("");
@@ -28,6 +29,7 @@ function limpiarCamposNuevoDistribuidor() {
     $("#tbPatrocinador").val("");
     $("#tbUsuario").val("");
     $("#tbPassword").val("");
+    $("#tbBuscar").val("");
     $("#cbUsuario").prop("checked", false);
 }
 
@@ -201,5 +203,9 @@ function crearUsuario() {
 }
 
 function elegirPatrocinador(id, value) {
-    nd_IdPatrocinador = id;
+    md_IdPatrocinador = id;
+}
+
+function elegirDistribuidor(id, value) {
+    md_IdDistribuidor = id;
 }
