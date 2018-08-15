@@ -74,6 +74,14 @@
         </div>
         <div class="row divMargin divCenter">
             <div class="col-1">
+                Entre calles
+            </div>
+            <div class="col-11">
+                <input type="text" class="form-control inputUpper" id="tbEntreCalles" />
+            </div>
+        </div>
+        <div class="row divMargin divCenter">
+            <div class="col-1">
                 Colonia
             </div>
             <div class="col-3">
@@ -208,7 +216,7 @@
                 </select>
             </div>
             <div class="col-2">
-                <input type="text" id="tbAño" class="form-control"></input>
+                <input type="text" id="tbAño" class="form-control" />
             </div>
         </div>
         <div class="row divMargin divCenter">
@@ -228,7 +236,7 @@
         <div class="row divMargin divCenter">
             <div class="col-4">
                 <label class="switch s-350">
-                    <input id="cbUsuario" type="checkbox" />
+                    <input id="cbUsuario" type="checkbox" onchange="verificarCreacionUsuario()" />
                     <span class="slider round">
                         Crear usuario para el sitio web
                     </span>
@@ -238,13 +246,13 @@
                 Usuario
             </div>
             <div class="col-3">
-                <input type="text" class="form-control inputUpper" id="tbUsuario" />
+                <input type="text" class="form-control inputUpper" id="tbUsuario" disabled="disabled" />
             </div>
             <div class="col-1">
                 Contraseña
             </div>
             <div class="col-3">
-                <input type="text" class="form-control inputUpper" id="tbPassword" />
+                <input type="text" class="form-control inputUpper" id="tbPassword" disabled="disabled" />
             </div>
         </div>
         <div class="row divMargin">

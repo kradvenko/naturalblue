@@ -78,3 +78,14 @@ CHANGE COLUMN `idbanco` `banco` VARCHAR(30) NULL DEFAULT NULL ;
 ALTER TABLE `distribuidores` 
 ADD COLUMN `tieneusuario` VARCHAR(5) NULL AFTER `fechacaptura`;
 
+--14/08/2018
+ALTER TABLE `distribuidores` 
+ADD COLUMN `status` VARCHAR(45) NULL AFTER `tieneusuario`;
+
+CREATE TABLE `relacion` (
+  `idrelacion` INT NOT NULL AUTO_INCREMENT,
+  `idpatrocinadororiginal` INT NULL,
+  `idpatrocinador` INT NULL,
+  `iddistribuidor` INT NULL,
+  `status` VARCHAR(45) NULL,
+  PRIMARY KEY (`idrelacion`));

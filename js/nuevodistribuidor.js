@@ -9,6 +9,7 @@ function limpiarCamposNuevoDistribuidor() {
     $("#tbCalle").val("");
     $("#tbNumInterior").val("");
     $("#tbNumExterior").val("");
+    $("#tbEntreCalles").val("");
     $("#tbColonia").val("");
     $("#tbCiudad").val("");
     $("#tbEstado").val("NAYARIT");
@@ -38,6 +39,7 @@ function agregarNuevoDistribuidor() {
     var calle = $("#tbCalle").val();
     var interior = $("#tbNumInterior").val();
     var exterior = $("#tbNumExterior").val();
+    var entreCalles = $("#tbEntreCalles").val();
     var colonia = $("#tbColonia").val();
     var ciudad = $("#tbCiudad").val();
     var estado = $("#tbEstado").val();
@@ -106,4 +108,74 @@ function agregarNuevoDistribuidor() {
             return;
         }
     }
+
+    var fechaCaptura = obtenerFechaHoraActual('FULL');
+
+    $.ajax({url: "php/agregarDistribuidor.php", async: false, type: "POST", data: { nombre: nombre, paterno: paterno, materno: materno,
+            calle: calle, interior: interior, exterior: exterior, entreCalles: entreCalles, colonia: colonia, ciudad: ciudad, estado: estado,
+            codigoPostal: codigoPostal, telefonoParticular: telParticular, telefonoCelular: telCelular, banco: banco, clabe: clabe,
+            email: email, rfc: rfc, diaNacimiento: dia, mesNacimiento: mes, anoNacimiento: año, curp: curp, ine: ine, beneficiario: beneficiario, patrocinador: patrocinador,
+            fechaCaptura: fechaCaptura, tieneUsuario: tieneUsuario, usuario: usuario, pass: pass }, success: function(res) {
+        if (res == "OK") {
+            alert("Se ha agregado el distribuidor.");
+            limpiarCamposNuevoDistribuidor();
+        } else {
+            alert(res);
+        }
+    }});
+}
+
+function verificarCreacionUsuario() {
+
+    if ($("#cbUsuario").is(":checked")) {
+
+        var nombre = $("#tbNombre").val();
+        var dia = $("#selDia").val();
+        var mes = $("#selMes").val();
+        var año = $("#tbAño").val();
+
+        if (nombre.length == 0) {
+            $("#cbUsuario").prop("checked", false);
+            alert("No es posible crear el usuario. Por favor escriba el nombre del distribuidor.");
+            return;
+        }
+        if (dia.length == 0) {
+            $("#cbUsuario").prop("checked", false);
+            return;
+        }
+        if (mes.length == 0) {
+            $("#cbUsuario").prop("checked", false);
+            return;
+        }
+        if (año.length == 0) {
+            $("#cbUsuario").prop("checked", false);
+            alert("No es posible crear el usuario. Por favor escriba el año de nacimiento del distribuidor.");
+            return;
+        }
+        crearUsuario();
+    } else {
+        $("#tbUsuario").val("");
+        $("#tbPassword").val("");
+    }
+}
+
+function crearUsuario() {
+    var nombre = $("#tbNombre").val();
+    var dia = $("#selDia").val();
+    var mes = $("#selMes").val();
+    var año = $("#tbAño").val();
+
+    var encFecha = parseInt(dia) + parseInt(mes) + parseInt(año);
+    var encCFecha = parseInt(obtenerFechaHoraActual('DAY')) + parseInt(obtenerFechaHoraActual('MONTH')) + parseInt(obtenerFechaHoraActual('YEAR'));
+
+    var finalFecha = encFecha + encCFecha;
+
+    var nombre = nombre.replace(' ', '');
+    var usuario = nombre.charAt(nombre.length/2) + nombre.charAt(nombre.length/2 - 1) + nombre.charAt(nombre.length/2 + 1);
+    usuario = usuario + finalFecha;
+    $("#tbUsuario").val(usuario);
+
+    var pass = nombre.charAt(0) + nombre.charAt(nombre.length - 1) + nombre.charAt(nombre.length/2 + 1);
+    pass = pass + encCFecha;
+    $("#tbPassword").val(pass);
 }
