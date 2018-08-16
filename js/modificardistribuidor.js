@@ -208,4 +208,45 @@ function elegirPatrocinador(id, value) {
 
 function elegirDistribuidor(id, value) {
     md_IdDistribuidor = id;
+    cargarDatosDistribuidor();
+}
+
+function cargarDatosDistribuidor() {
+    $.ajax({url: "php/obtenerDistribuidorXML.php", async: false, type: "POST", data: { idDistribuidor: md_IdDistribuidor}, success: function(res) {
+        $('resultado', res).each(function(index, element) {
+            if ($(this).find("respuesta").text() == "OK") {
+                $("#tbNombre").val($(this).find("nombre").text());
+                $("#tbPaterno").val($(this).find("apellidopaterno").text());
+                $("#tbMaterno").val($(this).find("apellidomaterno").text());
+                $("#tbCalle").val($(this).find("calle").text());
+                $("#tbNumInterior").val($(this).find("numinterior").text());
+                $("#tbNumExterior").val($(this).find("numexterior").text());
+                $("#tbEntreCalles").val($(this).find("entrecalles").text());
+                $("#tbColonia").val($(this).find("colonia").text());
+                $("#tbCiudad").val($(this).find("ciudad").text());
+                $("#tbEstado").val($(this).find("estado").text());
+                $("#tbCodigoPostal").val($(this).find("codigopostal").text());
+                $("#tbTelParticular").val($(this).find("telefonoparticular").text());
+                $("#tbTelCelular").val($(this).find("telefonocelular").text());
+                $("#tbBanco").val($(this).find("banco").text());
+                $("#tbClabe").val($(this).find("clabe").text());
+                $("#tbEmail").val($(this).find("email").text());
+                $("#tbRfc").val($(this).find("rfc").text());
+                $("#tbCurp").val($(this).find("curp").text());
+                $("#tbIne").val($(this).find("ine").text());
+                $("#selDia").val($(this).find("dianacimiento").text());
+                $("#selMes").val($(this).find("mesnacimiento").text());
+                $("#tbAño").val($(this).find("anonacimiento").text());
+                $("#tbBeneficiario").val($(this).find("beneficiario").text());
+                $("#tbPatrocinador").val($(this).find("patrocinador").text());
+                if ($(this).find("tieneusuario").text() == "SI") {
+                    $("#tbUsuario").val($(this).find("usuario").text());
+                    $("#tbPassword").val($(this).find("pass").text());
+                    $("#cbUsuario").prop("checked", true);
+                } else {
+                    $("#cbUsuario").prop("checked", false);
+                }               
+            }
+        });
+    }});
 }

@@ -232,7 +232,7 @@
                 </select>
             </div>
             <div class="col-2">
-                <input type="text" id="tbAño" class="form-control"></input>
+                <input type="text" id="tbAño" class="form-control" />
             </div>
         </div>
         <div class="row divMargin divCenter">
@@ -311,8 +311,8 @@
             minLength: 2,
             select: function(event, ui) {
                 elegirDistribuidor(ui.item.id, ui.item.value);
-                //this.value = '';
-                //return false;
+                this.value = '';
+                return false;
             }
         });
     });
