@@ -33,7 +33,7 @@ function limpiarCamposModificarDistribuidor() {
     $("#cbUsuario").prop("checked", false);
 }
 
-function agregarNuevoDistribuidor() {
+function actualizarDistribuidor() {
     var nombre = $("#tbNombre").val();
     var paterno = $("#tbPaterno").val();
     var materno = $("#tbMaterno").val();
@@ -57,7 +57,7 @@ function agregarNuevoDistribuidor() {
     var mes = $("#selMes").val();
     var año = $("#tbAño").val();
     var beneficiario = $("#tbBeneficiario").val();
-    var patrocinador = nd_IdPatrocinador;
+    var patrocinador = md_IdPatrocinador;
     var usuario = $("#tbUsuario").val();
     var pass = $("#tbPassword").val();
     var tieneUsuario = $("#cbUsuario").is(":checked") ? "SI" : "NO";
@@ -110,8 +110,6 @@ function agregarNuevoDistribuidor() {
         }
     }
 
-    var fechaCaptura = obtenerFechaHoraActual('FULL');
-
     nombre = nombre.toUpperCase();
     paterno = paterno.toUpperCase();
     materno = materno.toUpperCase();
@@ -140,7 +138,7 @@ function agregarNuevoDistribuidor() {
             fechaCaptura: fechaCaptura, tieneUsuario: tieneUsuario, usuario: usuario, pass: pass }, success: function(res) {
         if (res == "OK") {
             alert("Se ha agregado el distribuidor.");
-            limpiarCamposNuevoDistribuidor();
+            limpiarCamposModificarDistribuidor();
         } else {
             alert(res);
         }
@@ -245,7 +243,8 @@ function cargarDatosDistribuidor() {
                     $("#cbUsuario").prop("checked", true);
                 } else {
                     $("#cbUsuario").prop("checked", false);
-                }               
+                }
+                md_IdPatrocinador = $(this).find("idpatrocinador").text();
             }
         });
     }});
