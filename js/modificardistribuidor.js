@@ -34,6 +34,7 @@ function limpiarCamposModificarDistribuidor() {
 }
 
 function actualizarDistribuidor() {
+    var idDistribuidor = md_IdDistribuidor;
     var nombre = $("#tbNombre").val();
     var paterno = $("#tbPaterno").val();
     var materno = $("#tbMaterno").val();
@@ -58,6 +59,9 @@ function actualizarDistribuidor() {
     var año = $("#tbAño").val();
     var beneficiario = $("#tbBeneficiario").val();
     var patrocinador = md_IdPatrocinador;
+    if ($("#tbPatrocinador").val().length == 0) {
+        patrocinador = 0;
+    }
     var usuario = $("#tbUsuario").val();
     var pass = $("#tbPassword").val();
     var tieneUsuario = $("#cbUsuario").is(":checked") ? "SI" : "NO";
@@ -126,18 +130,20 @@ function actualizarDistribuidor() {
     curp = curp.toUpperCase();
     ine = ine.toUpperCase();    
     beneficiario = beneficiario.toUpperCase();
-    patrocinador = nd_IdPatrocinador;
+    patrocinador = md_IdPatrocinador;
     usuario = $("#tbUsuario").val();
     pass = $("#tbPassword").val();
     tieneUsuario = $("#cbUsuario").is(":checked") ? "SI" : "NO";
 
-    $.ajax({url: "php/agregarDistribuidor.php", async: false, type: "POST", data: { nombre: nombre, paterno: paterno, materno: materno,
+    var fechaCaptura = obtenerFechaHoraActual('FULL');
+
+    $.ajax({url: "php/actualizarDistribuidor.php", async: false, type: "POST", data: { idDistribuidor: idDistribuidor, nombre: nombre, paterno: paterno, materno: materno,
             calle: calle, interior: interior, exterior: exterior, entreCalles: entreCalles, colonia: colonia, ciudad: ciudad, estado: estado,
             codigoPostal: codigoPostal, telefonoParticular: telParticular, telefonoCelular: telCelular, banco: banco, clabe: clabe,
             email: email, rfc: rfc, diaNacimiento: dia, mesNacimiento: mes, anoNacimiento: año, curp: curp, ine: ine, beneficiario: beneficiario, patrocinador: patrocinador,
             fechaCaptura: fechaCaptura, tieneUsuario: tieneUsuario, usuario: usuario, pass: pass }, success: function(res) {
         if (res == "OK") {
-            alert("Se ha agregado el distribuidor.");
+            alert("Se ha modificado el distribuidor.");
             limpiarCamposModificarDistribuidor();
         } else {
             alert(res);

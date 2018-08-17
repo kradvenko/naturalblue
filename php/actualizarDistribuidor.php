@@ -46,7 +46,7 @@
                 SET nombre = '$nombre', apellidopaterno = '$paterno', apellidomaterno = '$materno', calle = '$calle', numinterior = '$interior', numexterior = '$exterior',
                 entrecalles = '$entreCalles', colonia = '$colonia', ciudad = '$ciudad', estado = '$estado', codigopostal = '$codigoPostal', telefonoparticular = '$telefonoParticular',
                 telefonocelular = '$telefonoCelular', banco = '$banco', clabe = '$clabe', email = '$email', rfc = '$rfc', dianacimiento = '$diaNacimiento', mesnacimiento = '$mesNacimiento',
-                anonacimiento = '$anoNacimiento', curp = '$curp', ine = '$ine', beneficiario = '$beneficiario', tieneusuario = '$tieneUsuario') 
+                anonacimiento = '$anoNacimiento', curp = '$curp', ine = '$ine', beneficiario = '$beneficiario', tieneusuario = '$tieneUsuario' 
                 WHERE iddistribuidor = $idDistribuidor";
 
         $con->query($sql);
@@ -58,7 +58,7 @@
 
             $result = $con->query($sql);
 
-            if (mysqli_num_rows($result) > 0) {
+            if ($con->field_count) {
                 $row = $result->fetch_array();
                 if ($row["idpatrocinador"] != $patrocinador) {
                     $sql = "UPDATE relacion
@@ -82,7 +82,7 @@
 
             $result = $con->query($sql);
 
-            if (mysqli_num_rows($result) > 0) {
+            if ($con->field_count) {
                 $nombreCompleto = $nombre . " " . $paterno . " " . $materno;
                 $sql = "UPDATE usuarios
                         SET nombre = '$nombreCompleto', usuario = '$usuario', pass = '$pass'
