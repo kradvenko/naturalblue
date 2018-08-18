@@ -10,7 +10,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/naturalblue.js"></script>
 
-    <title>Veterinaria Vironchi - Inicio</title>
+    <title>Natural blue</title>
 </head>
 <body>
     <div class="container mainContainer">
