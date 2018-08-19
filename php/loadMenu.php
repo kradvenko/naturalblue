@@ -33,8 +33,9 @@
                 <div class="dropdown">
                     <a href="" id="aInventarios" class="mainMenuElement">Inventario</a>
                     <div class="dropdown-content">
-                        <a href="articulos.php">Articulos</a>
-                        <a href="almacenes.php">Almacenes</a>
+                        <a href="productos.php">Productos</a>
+                        <a href="almacen1.php">Almacén 1</a>
+                        <a href="almacen2.php">Almacén 2</a>
                     </div>
                 </div>
             </div>

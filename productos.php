@@ -9,7 +9,7 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/naturalblue.js"></script>
-    <script src="js/articulos.js"></script>
+    <script src="js/productos.js"></script>
 
     <title>Natural blue</title>
 </head>
@@ -138,7 +138,7 @@
         <div class="modal-dialog modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Agregar nuevo artículo</h5>
+                    <h5 class="modal-title">Agregar nuevo producto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -146,10 +146,16 @@
                 <div class="modal-body">
                     <div class="row divMargin divCenter">
                         <div class="col-12 divMargin">
-                            Nombre
+                            Código
                         </div>
                         <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbNuevoArticuloNombre"></input>
+                            <input type="text" class="form-control" id="tbNuevoArticuloCodigo"></input>
+                        </div>
+                        <div class="col-12 divMargin">
+                            Producto
+                        </div>
+                        <div class="col-12 divMargin">
+                            <input type="text" class="form-control" id="tbNuevoArticuloProducto"></input>
                         </div>
                         <div class="col-12 divMargin">
                             Categoría
@@ -157,24 +163,24 @@
                         <div class="col-12 divMargin" id="divCategoriasNuevoArticulo">
                             
                         </div>
-                        <div class="col-12 divMargin">
-                            Clave
-                        </div>
-                        <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbNuevoArticuloClave"></input>
-                        </div>
-                        <div class="col-12 divMargin">
-                            Descripción
-                        </div>
-                        <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbNuevoArticuloDescripcion"></input>
+                        <div class="col-3 divMargin">
+                            Precio Distribuidor sin IVA
                         </div>
                         <div class="col-3 divMargin">
-                            Cantidad
+                            <input type="text" class="form-control" id="tbNuevoArticuloPrecioDistribuidor" value="0"></input>
                         </div>
                         <div class="col-3 divMargin">
-                            <input type="text" class="form-control" id="tbNuevoArticuloCantidad" value="0"></input>
+                            I.V.A.
                         </div>
+                        <div class="col-3 divMargin">
+                            <input type="text" class="form-control" id="tbNuevoArticuloIVA" value="0"></input>
+                        </div> 
+                        <div class="col-3 divMargin">
+                            Precio Distribuidor con IVA
+                        </div>
+                        <div class="col-3 divMargin">
+                            <input type="text" class="form-control" id="tbNuevoArticuloPrecioDistribuidorIVA" value="0"></input>
+                        </div>                                               
                         <div class="col-3 divMargin">
                             Precio Público
                         </div>
@@ -182,16 +188,10 @@
                             <input type="text" class="form-control" id="tbNuevoArticuloPrecioPublico" value="0"></input>
                         </div>
                         <div class="col-3 divMargin">
-                            Cantidad Mínima
+                            Valor Negocio
                         </div>
                         <div class="col-3 divMargin">
-                            <input type="text" class="form-control" id="tbNuevoArticuloCantidadMinima" value="0"></input>
-                        </div>
-                        <div class="col-3 divMargin">
-                            Precio Compra
-                        </div>
-                        <div class="col-3 divMargin">
-                            <input type="text" class="form-control" id="tbNuevoArtículoPrecioCompra" value="0"></input>
+                            <input type="text" class="form-control" id="tbNuevoArticuloValorNegocio" value="0"></input>
                         </div>
                     </div>
                 </div>
@@ -213,12 +213,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row divMargin divCenter">
+                <div class="row divMargin divCenter">
                         <div class="col-12 divMargin">
-                            Nombre
+                            Código
                         </div>
                         <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbModificarArticuloNombre"></input>
+                            <input type="text" class="form-control" id="tbModificarArticuloCodigo"></input>
+                        </div>
+                        <div class="col-12 divMargin">
+                            Producto
+                        </div>
+                        <div class="col-12 divMargin">
+                            <input type="text" class="form-control" id="tbModificarArticuloProducto"></input>
                         </div>
                         <div class="col-12 divMargin">
                             Categoría
@@ -226,24 +232,24 @@
                         <div class="col-12 divMargin" id="divCategoriasModificarArticulo">
                             
                         </div>
-                        <div class="col-12 divMargin">
-                            Clave
-                        </div>
-                        <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbModificarArticuloClave"></input>
-                        </div>
-                        <div class="col-12 divMargin">
-                            Descripción
-                        </div>
-                        <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbModificarArticuloDescripcion"></input>
+                        <div class="col-3 divMargin">
+                            Precio Distribuidor sin IVA
                         </div>
                         <div class="col-3 divMargin">
-                            Cantidad
+                            <input type="text" class="form-control" id="tbModificarArticuloPrecioDistribuidor" value="0"></input>
                         </div>
                         <div class="col-3 divMargin">
-                            <input type="text" class="form-control" id="tbModificarArticuloCantidad" value="0"></input>
+                            I.V.A.
                         </div>
+                        <div class="col-3 divMargin">
+                            <input type="text" class="form-control" id="tbModificarArticuloIVA" value="0"></input>
+                        </div> 
+                        <div class="col-3 divMargin">
+                            Precio Distribuidor con IVA
+                        </div>
+                        <div class="col-3 divMargin">
+                            <input type="text" class="form-control" id="tbModificarArticuloPrecioDistribuidorIVA" value="0"></input>
+                        </div>                       
                         <div class="col-3 divMargin">
                             Precio Público
                         </div>
@@ -251,16 +257,10 @@
                             <input type="text" class="form-control" id="tbModificarArticuloPrecioPublico" value="0"></input>
                         </div>
                         <div class="col-3 divMargin">
-                            Cantidad Mínima
+                            Valor Negocio
                         </div>
                         <div class="col-3 divMargin">
-                            <input type="text" class="form-control" id="tbModificarArticuloCantidadMinima" value="0"></input>
-                        </div>
-                        <div class="col-3 divMargin">
-                            Precio Compra
-                        </div>
-                        <div class="col-3 divMargin">
-                            <input type="text" class="form-control" id="tbModificarArtículoPrecioCompra" value="0"></input>
+                            <input type="text" class="form-control" id="tbModificarArticuloValorNegocio" value="0"></input>
                         </div>
                     </div>
                 </div>
@@ -283,10 +283,10 @@
         $('#tbNuevaCategoria').focus();
     });
     $('#modalAgregarArticulo').on('shown.bs.modal', function() {
-        $('#tbNuevoArticuloNombre').focus();
+        $('#tbNuevoArticuloCodigo').focus();
     });
     $('#modalModificarArticulo').on('shown.bs.modal', function() {
-        $('#tbModificarArticuloNombre').focus();
+        $('#tbModificarArticuloCodigo').focus();
     });
 </script>
 </html>

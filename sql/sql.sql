@@ -89,3 +89,38 @@ CREATE TABLE `relacion` (
   `iddistribuidor` INT NULL,
   `status` VARCHAR(45) NULL,
   PRIMARY KEY (`idrelacion`));
+
+--18/08/2018
+CREATE TABLE `productos` (
+  `idproducto` INT NOT NULL AUTO_INCREMENT,
+  `idcategoria` int(11) DEFAULT NULL,
+  `codigo` VARCHAR(45) NULL,
+  `producto` VARCHAR(150) NULL,
+  `preciodistribuidor` FLOAT NULL,
+  `iva` FLOAT NULL,
+  `preciodistribuidoriva` FLOAT NULL,
+  `preciopublico` FLOAT NULL,
+  `valornegocio` INT NULL,
+  `estado` VARCHAR(45) NULL,
+  `idusuariocaptura` int(11) DEFAULT NULL,
+  `fechacaptura` VARCHAR(45) NULL,
+  PRIMARY KEY (`idproducto`));
+
+CREATE TABLE `tpc_almacen1` (
+  `idalmacenproducto` INT NOT NULL AUTO_INCREMENT,
+  `idproducto` INT NULL,
+  `cantidad` INT NULL,
+  `cantidadminima` INT NULL,
+  PRIMARY KEY (`idalmacenproducto`));
+  
+  CREATE TABLE `tpc_almacen2` (
+  `idalmacenproducto` INT NOT NULL AUTO_INCREMENT,
+  `idproducto` INT NULL,
+  `cantidad` INT NULL,
+  PRIMARY KEY (`idalmacenproducto`));
+
+CREATE TABLE `tpc_tienda1` (
+  `idtiendaproducto` INT NOT NULL AUTO_INCREMENT,
+  `idproducto` INT NULL,
+  `cantidad` INT NULL,
+  PRIMARY KEY (`idtiendaproducto`));
