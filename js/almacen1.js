@@ -1,5 +1,5 @@
 //Variables para el módulo del almacén 1
-
+a1_IdProducto = 0;
 //Funciones para el módulo del almacén 1
 function obtenerCategoriasSelect() {
     $.ajax({url: "php/obtenerCategoriasSelect.php", async: false, type: "POST", data: { idSelect: 'selCategorias', estado: 'ACTIVO' }, success: function(res) {
@@ -26,6 +26,7 @@ function obtenerArticulosInventarioAlmacen1() {
 }
 
 function obtenerExistenciasArticulo(id) {
+    a1_IdProducto = id;
     $('#modalExistencias').modal('show');
     $.ajax({url: "php/obtenerExistenciasArticuloXML.php", async: false, type: "POST", data: { idProducto: id }, success: function(res) {
         $('resultado', res).each(function(index, element) {
@@ -46,5 +47,24 @@ function limpiarCamposExistencias() {
 }
 
 function registrarProducto(id) {
-    alert(id);
+    $.ajax({url: "php/registrarProducto.php", async: false, type: "POST", data: { idProducto: id }, success: function(res) {
+        if (res == "OK") {
+            alert("Se ha registrado el producto en los almacenes y tiendas.");
+        }
+    }});
+    $.ajax({url: "php/obtenerExistenciasArticuloXML.php", async: false, type: "POST", data: { idProducto: id }, success: function(res) {
+        $('resultado', res).each(function(index, element) {
+            if ($(this).find("respuesta").text() == "OK") {
+                $("#tbExistenciaAlmacen1").val($(this).find("cantidad").text());
+                $("#divSinRegistro").html("");
+            } else if ($(this).find("respuesta").text() == "SIN REGISTRO") {
+                $("#tbExistenciaAlmacen1").val("No se ha registrado este producto.");
+                $("#divSinRegistro").html("<input type='button' class='btn btn-info' value='Registrar producto' onclick='registrarProducto(" + id + ")' />");
+            }
+        });
+    }});
+}
+
+function guardarExistencias() {
+
 }
