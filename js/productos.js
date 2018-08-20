@@ -121,7 +121,7 @@ function obtenerArticulosInventario() {
     if (idCategoria == null) {
         return;
     }
-    $.ajax({url: "php/obtenerArticulosInventario.php", async: false, type: "POST", data: { idCategoria: idCategoria, estado: '%' }, success: function(res) {
+    $.ajax({url: "php/obtenerArticulosInventario.php", async: false, type: "POST", data: { idCategoria: idCategoria, estado: '%', tipoInventario: 'PRODUCTOS' }, success: function(res) {
         $("#divArticulosInventario").html(res);
     }});
 }

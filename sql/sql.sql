@@ -67,6 +67,7 @@ CREATE TABLE `distribuidores` (
   `prefijo` VARCHAR(5) NULL,
   `estado` VARCHAR(45) NULL,
   `idmatriz` INT NULL,
+  `nombretabla` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idtienda`));
 
 ALTER TABLE `distribuidores` 
@@ -124,3 +125,12 @@ CREATE TABLE `tpc_tienda1` (
   `idproducto` INT NULL,
   `cantidad` INT NULL,
   PRIMARY KEY (`idtiendaproducto`));
+
+  CREATE TABLE `naturalblue`.`almacenes` (
+  `idalmacen` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `tipo` VARCHAR(4) NULL,
+  `prefijo` VARCHAR(5) NULL,
+  `nombretabla` VARCHAR(45) NULL,
+  `estado` VARCHAR(45) NULL,
+  PRIMARY KEY (`idalmacen`));

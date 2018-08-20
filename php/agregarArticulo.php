@@ -27,11 +27,55 @@
         $tabla = "productos";
 
         $sql = "INSERT INTO $tabla
-                (codigo, idcategoria, producto, preciodistribuidor, preciopublico, iva, preciodistribuidoriva valornegocio, estado, idusuariocaptura, fechacaptura)
+                (codigo, idcategoria, producto, preciodistribuidor, preciopublico, iva, preciodistribuidoriva, valornegocio, estado, idusuariocaptura, fechacaptura)
                 VALUES
                 ('$codigo', $idCategoria, '$producto', '$precioDistribuidor', $precioPublico, $iva, $precioDistribuidorIva, $valorNegocio, 'ACTIVO', $idUsuario, '$fechaCaptura')";
 
         $con->query($sql);
+
+        $idProducto = $con->insert_id;
+
+        //Agregar el producto en cada almacén
+        if ($idProducto > 0) {
+            $sql = "SELECT *
+                    FROM almacenes
+                    WHERE estado = 'ACTIVO'";
+            $result = $con->query($sql);
+
+            while($row = $result->fetch_array()) {
+                $tablaActual = $row["prefijo"] . $row["nombretabla"];
+                if ($row["tipo"] == "1") {
+                    $sqlAlmacen = "INSERT INTO $tablaActual
+                                    (idproducto, cantidad, cantidadminima)
+                                    VALUES
+                                    ($idProducto, 0, 0)";
+                    $con->query($sqlAlmacen);
+                }
+                if ($row["tipo"] == "2") {
+                    $sqlAlmacen = "INSERT INTO $tablaActual
+                                    (idproducto, cantidad)
+                                    VALUES
+                                    ($idProducto, 0)";
+                    $con->query($sqlAlmacen);
+                }
+            }
+        }
+        //Agregar el producto en cada tienda
+        if ($idProducto > 0) {
+            $sql = "SELECT *
+                    FROM tiendas
+                    WHERE estado = 'ACTIVO'";
+            $result = $con->query($sql);
+
+            while($row = $result->fetch_array()) {
+                $tablaActual = $row["prefijo"] . $row["nombretabla"];
+                $sqlTienda = "INSERT INTO $tablaActual
+                                (idproducto, cantidad)
+                                VALUES
+                                ($idProducto, 0)";
+                $con->query($sqlTienda);
+            }
+        }
 
         echo "OK";
 

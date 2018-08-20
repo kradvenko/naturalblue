@@ -57,11 +57,42 @@
             </div>
         </div>
     </div>
+    <!--Ventana modal para ver las existencias de un artículo-->
+    <div class="modal fade" id="modalExistencias" tabindex="-1" role="dialog" aria-labelledby="modalExistencias" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Existencias</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                <div class="row divMargin divCenter">
+                        <div class="col-12 divMargin">
+                            Existencias en el almacén 1
+                        </div>
+                        <div class="col-12 divMargin">
+                            <input type="text" class="form-control" id="tbExistenciaAlmacen1" value="0"></input>
+                        </div>
+                        <div class="col-12 divMargin" id="divSinRegistro">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="limpiarCamposExistencias()">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarExistencias()">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
     $(document).ready(function() {
         checkSession();
         obtenerCategoriasSelect();
+        obtenerArticulosInventarioAlmacen1();
         $("#aInventarios").addClass("currentPage");
     });
 </script>
