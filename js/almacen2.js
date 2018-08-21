@@ -11,11 +11,11 @@ function obtenerCategoriasSelect() {
 function obtenerCategoriasSelect() {
     $.ajax({url: "php/obtenerCategoriasSelect.php", async: false, type: "POST", data: { idSelect: 'selCategorias', estado: 'ACTIVO' }, success: function(res) {
         $("#divCategorias").html(res);
-        $("#selCategorias").change(obtenerArticulosInventarioAlmacen1);
+        $("#selCategorias").change(obtenerArticulosInventarioAlmacen2);
     }});
 }
 
-function obtenerArticulosInventarioAlmacen1() {
+function obtenerArticulosInventarioAlmacen2() {
     var idCategoria = $("#selCategorias").val();
     if (idCategoria == null) {
         return;

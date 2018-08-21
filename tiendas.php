@@ -9,7 +9,7 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/naturalblue.js"></script>
-    <script src="js/almacen2.js"></script>
+    <script src="js/tiendas.js"></script>
 
     <title>Natural blue</title>
 </head>
@@ -28,7 +28,15 @@
         </div>
         <div class="row divMargin divCenter divBackgroundTwo">
             <div class="col-12">
-                Almacén 2
+                Tiendas
+            </div>
+        </div>
+        <div class="row divMargin divCenter">
+            <div class="col-3">
+                Elija una tienda
+            </div>
+            <div class="col-9">
+                Artículos
             </div>
         </div>
         <div class="row divMargin divCenter">
@@ -70,10 +78,16 @@
                 <div class="modal-body">
                 <div class="row divMargin divCenter">
                         <div class="col-12 divMargin">
-                            Existencias en el almacén 2
+                            Existencias en el almacén 1
                         </div>
                         <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbExistenciaAlmacen2" value="0"></input>
+                            <input type="text" class="form-control" id="tbExistenciaAlmacen1" value="0"></input>
+                        </div>
+                        <div class="col-12 divMargin">
+                            Cantidad mínima para el producto
+                        </div>
+                        <div class="col-12 divMargin">
+                            <input type="text" class="form-control" id="tbCantidadMinima" value="0"></input>
                         </div>
                         <div class="col-12 divMargin" id="divSinRegistro">
 
@@ -92,7 +106,7 @@
     $(document).ready(function() {
         checkSession();
         obtenerCategoriasSelect();
-        obtenerArticulosInventarioAlmacen2();
+        ///obtenerArticulosInventarioAlmacen1();
         $("#aInventarios").addClass("currentPage");
     });
 </script>

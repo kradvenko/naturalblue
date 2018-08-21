@@ -36,6 +36,7 @@
                         <a href="productos.php">Productos</a>
                         <a href="almacen1.php">Almacén 1</a>
                         <a href="almacen2.php">Almacén 2</a>
+                        <a href="tiendas.php">Tiendas</a>
                     </div>
                 </div>
             </div>
