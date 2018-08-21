@@ -75,6 +75,12 @@
                         <div class="col-12 divMargin">
                             <input type="text" class="form-control" id="tbExistenciaAlmacen1" value="0"></input>
                         </div>
+                        <div class="col-12 divMargin">
+                            Cantidad mínima para el producto
+                        </div>
+                        <div class="col-12 divMargin">
+                            <input type="text" class="form-control" id="tbCantidadMinima" value="0"></input>
+                        </div>
                         <div class="col-12 divMargin" id="divSinRegistro">
 
                         </div>

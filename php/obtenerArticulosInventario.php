@@ -77,7 +77,7 @@
                 echo "<input type='button' class='btn btn-info' value='Modificar' onclick='obtenerDatosArticulo(" . $row["idproducto"] . ")' />";
                 echo "</div>";
             }
-        } elseif ($tipoInventario == "ALMACEN1") {
+        } elseif ($tipoInventario == "ALMACEN1" || $tipoInventario == "ALMACEN2") {
             echo "<div class='col-1 divHeaderLista'>";
             echo "Código";
             echo "</div>";
