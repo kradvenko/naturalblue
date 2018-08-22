@@ -126,7 +126,7 @@ CREATE TABLE `tpc_tienda1` (
   `cantidad` INT NULL,
   PRIMARY KEY (`idtiendaproducto`));
 
-  CREATE TABLE `naturalblue`.`almacenes` (
+  CREATE TABLE `almacenes` (
   `idalmacen` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `tipo` VARCHAR(4) NULL,

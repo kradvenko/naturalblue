@@ -7,3 +7,14 @@ function obtenerCategoriasSelect() {
         $("#selCategorias").change(obtenerArticulosInventario);
     }});
 }
+
+function obtenerTiendas() {
+    $.ajax({url: "php/obtenerTiendasSelect.php", async: false, type: "POST", data: { idSelect: 'selTiendas', estado: 'ACTIVO' }, success: function(res) {
+        $("#divTiendas").html(res);
+        $("#selCategorias").change(obtenerArticulosInventario);
+    }});
+}
+
+function obtenerArticulosInventario() {
+    
+}

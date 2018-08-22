@@ -35,8 +35,8 @@
             <div class="col-3">
                 Elija una tienda
             </div>
-            <div class="col-9">
-                Artículos
+            <div class="col-9" id="divTiendas">
+                
             </div>
         </div>
         <div class="row divMargin divCenter">
@@ -106,6 +106,7 @@
     $(document).ready(function() {
         checkSession();
         obtenerCategoriasSelect();
+        obtenerTiendas();
         ///obtenerArticulosInventarioAlmacen1();
         $("#aInventarios").addClass("currentPage");
     });
