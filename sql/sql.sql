@@ -111,3 +111,31 @@ CREATE TABLE `usuarios` (
   `estado` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idusuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--09/09/2018
+CREATE TABLE `ventas` (
+  `idventa` int(11) NOT NULL AUTO_INCREMENT,
+  `idtienda` int(11) DEFAULT NULL,
+  `iddistribuidor` int(11) DEFAULT NULL,
+  `idusuario` int(11) DEFAULT NULL,
+  `fecha` varchar(45) DEFAULT NULL,
+  `tipo` varchar(45) DEFAULT NULL,
+  `totalventa` float DEFAULT NULL,
+  `totalpuntos` int(11) DEFAULT NULL,
+  `estado` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idventa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+  CREATE TABLE `detalleventa` (
+  `iddetalleventa` INT NOT NULL AUTO_INCREMENT,
+  `idventa` INT NULL,
+  `idproducto` INT NULL,
+  `cantidad` INT NULL,
+  `precio` FLOAT NULL,
+  `puntos` INT NULL,
+  `total` FLOAT NULL,
+  PRIMARY KEY (`iddetalleventa`));
+
+
