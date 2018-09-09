@@ -34,6 +34,8 @@
         //echo $sql;
         $tabla =  "detalleventa";
 
+        $tablaTienda = $prefijo . "tienda1";
+
         for ($i = 0; $i < sizeof($productos); $i++) {
             $item = $productos[$i];
 
@@ -43,9 +45,15 @@
                     ($idVenta, " . $item["id"] . ", " . $item["cantidad"] . ", " . $item["precio"] . ", " . $item["totalp"] . ", " . $item["total"] . ")";
 
             $con->query($sql);
+
+            $sql = "UPDATE $tablaTienda
+                    SET cantidad = cantidad - " . $item["cantidad"] . "
+                    WHERE idproducto = " . $item["id"];
+                    
+            $con->query($sql);
         }
         
-        echo "OK";
+        echo $idVenta;
 
         mysqli_close($con);
     }

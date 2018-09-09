@@ -121,11 +121,12 @@ function realizarVenta() {
     var productos = nv_Productos;
 
     $.ajax({url: "php/agregarVenta.php", async: false, type: "POST", data: { fecha: fecha, total: total, tipo: tipo, iddistribuidor: nv_IdDistribuidor, puntos: nv_TotalPuntos, total: nv_Total, productos: productos }, success: function(res) {
-        if (res == "OK") {
+        if (!isNaN(res)) {
             alert("Se ha ingresado la venta.");
             $('#modalPantallaVenta').modal('hide');
             limpiarCamposPantallaVenta();
             limpiarCamposNuevaVenta();
+            window.open("hojaventa.php?idventa=" + res,'_blank');
         } else {
             alert(res);
         }
