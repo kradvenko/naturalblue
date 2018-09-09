@@ -78,16 +78,10 @@
                 <div class="modal-body">
                 <div class="row divMargin divCenter">
                         <div class="col-12 divMargin">
-                            Existencias en el almacén 1
+                            Existencias en tienda
                         </div>
                         <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbExistenciaAlmacen1" value="0"></input>
-                        </div>
-                        <div class="col-12 divMargin">
-                            Cantidad mínima para el producto
-                        </div>
-                        <div class="col-12 divMargin">
-                            <input type="text" class="form-control" id="tbCantidadMinima" value="0"></input>
+                            <input type="text" class="form-control" id="tbExistenciaTienda" value="0"></input>
                         </div>
                         <div class="col-12 divMargin" id="divSinRegistro">
 
@@ -107,7 +101,7 @@
         checkSession();
         obtenerCategoriasSelect();
         obtenerTiendas();
-        ///obtenerArticulosInventarioAlmacen1();
+        obtenerArticulosInventarioTienda();
         $("#aInventarios").addClass("currentPage");
     });
 </script>

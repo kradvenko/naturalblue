@@ -34,6 +34,13 @@
                     WHERE idproducto = $idProducto";
 
             $con->query($sql);
+        } elseif ($tipoInventario == "TIENDA") {
+            $tabla = $prefijo . "tienda1";
+            $sql = "UPDATE $tabla
+                    SET cantidad = $cantidad
+                    WHERE idproducto = $idProducto";
+
+            $con->query($sql);
         }
 
         echo "OK";

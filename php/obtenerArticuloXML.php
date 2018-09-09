@@ -40,7 +40,6 @@
             echo "<preciodistribuidor>" . $row['preciodistribuidor'] . "</preciodistribuidor>\n";
             echo "<iva>" . $row['iva'] . "</iva>\n";
             echo "<preciodistribuidoriva>" . $row['preciodistribuidoriva'] . "</preciodistribuidoriva>\n";
-            echo "<cantidad>" . $row['cantidad'] . "</cantidad>\n";
             echo "<preciopublico>" . $row['preciopublico'] . "</preciopublico>\n";
             echo "<valornegocio>" . $row['valornegocio'] . "</valornegocio>\n";
             echo "<estado>" . $row['estado'] . "</estado>\n";

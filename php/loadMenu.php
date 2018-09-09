@@ -17,7 +17,7 @@
                     <a href="menu.php" id="aMenu" class="mainMenuElement">Inicio</a>
                 </div>
                 <div class="dropdown">
-                    <a href="" id="aCitas" class="mainMenuElement">Ventas</a>
+                    <a href="" id="aVentas" class="mainMenuElement">Ventas</a>
                     <div class="dropdown-content">
                         <a href="nuevaventa.php">Nueva</a>
                         <a href="corte.php">Corte</a>
