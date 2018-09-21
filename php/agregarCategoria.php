@@ -6,9 +6,9 @@
         $categoria = $_POST["categoria"];
         $fechaCaptura = $_POST["fechaCaptura"];
 
-        $idTienda = $_COOKIE["v_idtienda"];
-        $prefijo = $_COOKIE["v_prefijo"];
-        $idUsuario = $_COOKIE["v_idusuario"];
+        $idTienda = $_COOKIE["nb_idtienda"];
+        $prefijo = $_COOKIE["nb_prefijo"];
+        $idUsuario = $_COOKIE["nb_idusuario"];
 
         if (!$categoria) {
             echo "Error. Faltan variables.";

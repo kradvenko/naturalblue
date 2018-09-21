@@ -138,4 +138,13 @@ CREATE TABLE `ventas` (
   `total` FLOAT NULL,
   PRIMARY KEY (`iddetalleventa`));
 
+CREATE TABLE `categorias` (
+  `idcategoria` int(11) NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(45) DEFAULT NULL,
+  `idusuariocaptura` int(11) DEFAULT NULL,
+  `fechacaptura` varchar(45) DEFAULT NULL,
+  `estado` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idcategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 

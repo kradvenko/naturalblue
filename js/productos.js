@@ -72,6 +72,7 @@ function modificarCategoria() {
 function obtenerCategoriasNuevoArticulo() {
     $.ajax({url: "php/obtenerCategoriasSelect.php", async: false, type: "POST", data: { idSelect: 'selCategoriasNuevoArticulo', estado: 'ACTIVO' }, success: function(res) {
         $("#divCategoriasNuevoArticulo").html(res);
+        $("#selCategoriasNuevoArticulo").val($("#selCategorias").val());
     }});
 }
 
@@ -81,6 +82,7 @@ function limpiarCamposNuevoArticulo() {
     $("#tbNuevoArticuloProducto").val("");
     $("#tbNuevoArticuloPrecioDistribuidor").val("0");
     $("#tbNuevoArticuloIVA").val("0");
+    $("#tbNuevoArticuloPrecioDistribuidorIVA").val("0");
     $("#tbNuevoArticuloPrecioPublico").val("0");
     $("#tbNuevoArticuloValorNegocio").val("0");
     $("#tbNuevoArticuloCantidad").val("0");
