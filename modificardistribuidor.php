@@ -49,6 +49,14 @@
             </div>
         </div>
         <div class="row divMargin divCenter">
+            <div class="col-2">
+                Número de distribuidor
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control inputUpper" id="tbIdDistribuidor" />
+            </div>            
+        </div>
+        <div class="row divMargin divCenter">
             <div class="col-1">
                 Nombre
             </div>

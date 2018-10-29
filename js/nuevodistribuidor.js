@@ -136,8 +136,8 @@ function agregarNuevoDistribuidor() {
             codigoPostal: codigoPostal, telefonoParticular: telParticular, telefonoCelular: telCelular, banco: banco, clabe: clabe,
             email: email, rfc: rfc, diaNacimiento: dia, mesNacimiento: mes, anoNacimiento: año, curp: curp, ine: ine, beneficiario: beneficiario, patrocinador: patrocinador,
             fechaCaptura: fechaCaptura, tieneUsuario: tieneUsuario, usuario: usuario, pass: pass }, success: function(res) {
-        if (res == "OK") {
-            alert("Se ha agregado el distribuidor.");
+        if (!isNaN(res)) {
+            alert("Se ha agregado el distribuidor " + res + ".");
             limpiarCamposNuevoDistribuidor();
         } else {
             alert(res);

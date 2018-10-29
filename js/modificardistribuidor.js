@@ -3,6 +3,7 @@ var md_IdPatrocinador = 0;
 var md_IdDistribuidor = 0;
 //Fuciones para el módulo de modificación de distribuidor
 function limpiarCamposModificarDistribuidor() {
+    $("#tbIdDistribuidor").val("");
     $("#tbNombre").val("");
     $("#tbPaterno").val("");
     $("#tbMaterno").val("");
@@ -219,6 +220,7 @@ function cargarDatosDistribuidor() {
     $.ajax({url: "php/obtenerDistribuidorXML.php", async: false, type: "POST", data: { idDistribuidor: md_IdDistribuidor}, success: function(res) {
         $('resultado', res).each(function(index, element) {
             if ($(this).find("respuesta").text() == "OK") {
+                $("#tbIdDistribuidor").val($(this).find("iddistribuidor").text());
                 $("#tbNombre").val($(this).find("nombre").text());
                 $("#tbPaterno").val($(this).find("apellidopaterno").text());
                 $("#tbMaterno").val($(this).find("apellidomaterno").text());

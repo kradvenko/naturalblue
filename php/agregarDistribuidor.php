@@ -71,7 +71,8 @@
             $con->query($sql);
         }
 
-        echo "OK";
+        //echo "OK";
+        echo $idDistribuidor;
 
         mysqli_close($con);
     }
