@@ -85,6 +85,7 @@ function agregarNuevoDistribuidor() {
         $("#tbEstado").focus();
         return;
     }
+    /*
     if (banco.length == 0) {
         alert("No ha escrito el banco del distribuidor");
         $("#tbBanco").focus();
@@ -95,6 +96,7 @@ function agregarNuevoDistribuidor() {
         $("#tbClabe").focus();
         return;
     }
+    */
     if (tieneUsuario == "SI") {
         if (usuario.length == 0) {
             alert("No ha escrito el nombre de usuario del distribuidor");
