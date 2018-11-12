@@ -18,7 +18,7 @@
         $result = $con->query($sql);
 
         while ($row = $result->fetch_array()) {
-            $item = array("id" => $row["iddistribuidor"] , "value" => ($row["nombre"] . " " . $row["apellidopaterno"] . " " . $row["apellidomaterno"]));
+            $item = array("id" => $row["iddistribuidor"] , "value" => ($row["iddistribuidor"] . " - " . $row["nombre"] . " " . $row["apellidopaterno"] . " " . $row["apellidomaterno"]));
             array_push($data, $item);
         }
         

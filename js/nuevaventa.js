@@ -126,7 +126,8 @@ function realizarVenta() {
             $('#modalPantallaVenta').modal('hide');
             limpiarCamposPantallaVenta();
             limpiarCamposNuevaVenta();
-            window.open("hojaventa.php?idventa=" + res,'_blank');
+            //window.open("hojaventa.php?idventa=" + res,'_blank');
+            window.open("ticketventa.php?idventa=" + res,'_blank');
         } else {
             alert(res);
         }
