@@ -58,12 +58,14 @@
 
             $result = $con->query($sql);
 
-            if ($con->field_count) {
+            if ($result->num_rows) {
                 $row = $result->fetch_array();
                 if ($row["idpatrocinador"] != $patrocinador) {
                     $sql = "UPDATE relacion
                             SET idpatrocinador = $patrocinador
                             WHERE iddistribuidor = $idDistribuidor";
+
+                    $con->query($sql);
                 }                
             } else {
                 $sql = "INSERT INTO relacion

@@ -53,7 +53,7 @@
                         Usuario actual :  ' . $_COOKIE["nb_nombre"] . ' 
                     </div>
                     <div class="col-2">
-                        <button type="button" class="btn btn-primary btn-danger" onclick="cerrarSesion()">Cerrar sesión</button> 
+                        <button type="button" class="btn btn-primary btn-danger" onclick="cerrarSesion()">Cerrar sesión</button>
                     </div>
                 </div>
             <div class="mainMenu">
