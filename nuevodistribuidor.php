@@ -303,5 +303,16 @@
             }
         });
     });
+    $(document).ready(function () {
+        var inputs = $(':input').keypress(function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                var nextInput = inputs.get(inputs.index(this) + 1);
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            }
+        });
+     });
 </script>
 </html>
