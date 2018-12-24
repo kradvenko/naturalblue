@@ -3,7 +3,7 @@ ov_IdDistribuidorElegido = 0;
 //Funciones para el modulo
 function elegirDistribuidor(id, value) {
     ov_IdDistribuidorElegido = id;
-    $('#divDistribuidor').html(value);
+    //$('#divDistribuidor').html(value);
     obtenerRed();
 }
 
