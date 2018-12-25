@@ -42,7 +42,7 @@
 
         echo "<table style='width: 100%'>";
 
-        echo "<tr>";
+        echo "<tr class='divRedMainSubHeader'>";
 
         echo "<th style='width: 5%'>";
         echo "Clave";
@@ -95,7 +95,7 @@
         echo "</tr>";
 
         while ($row = $result->fetch_array()) {
-            echo "<tr>";
+            echo "<tr class='divRedLevel-1'>";
 
             echo "<th>";
             echo $row["iddistribuidor"];
@@ -147,7 +147,7 @@
 
             echo "</tr>";
 
-            echo obtenerPatrocinadores($row["iddistribuidor"], 2);
+            echo obtenerPatrocinadores($row["iddistribuidor"], 2, $total);
             
             $total = $total + 1;
             $sql2 = "SELECT COUNT(*) AS C
@@ -161,7 +161,7 @@
 
         echo "</table>";
 
-        echo "El distribuidor es patrocinador de " . $total . " distribuidores.";
+        echo "<div class='col-12 divRedHighlight1'>El distribuidor es patrocinador de " . $total . " distribuidores.</div>";
 
         mysqli_close($con);
     }
@@ -170,7 +170,7 @@
         echo $t;
     }
 
-    function obtenerPatrocinadores($idDistribuidor, $nivel) {
+    function obtenerPatrocinadores($idDistribuidor, $nivel, &$total) {
 
         require('connection.php');
 
@@ -192,7 +192,7 @@
         }
 
         while ($row = $result->fetch_array()) {
-            $html = $html . "<tr>";
+            $html = $html . "<tr class='divRedLevel-" . $nivel . "'>";
 
             $html = $html . "<th>";
             $html = $html . $row["iddistribuidor"];
@@ -245,7 +245,9 @@
 
             $html = $html . "</tr>";
 
-            obtenerPatrocinadores($row["iddistribuidor"], $nivel + 1);
+            obtenerPatrocinadores($row["iddistribuidor"], $nivel + 1, $total);
+
+            $total = $total + 1;
             /*
             $total = $total + 1;
             $sql2 = "SELECT COUNT(*) AS C

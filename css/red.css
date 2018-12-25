@@ -6,3 +6,29 @@
     font-weight: bold;
     font-size: 15px;
 }
+
+.divRedMainSubHeader {
+    background-color: rgb(119, 187, 250);
+    color: rgb(0, 0, 0);
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.divRedLevel-1 {
+    background-color: rgb(25, 170, 206);
+}
+
+.divRedLevel-2 {
+    background-color: rgb(56, 178, 209);
+}
+
+.th-center {
+    align-content: center;
+}
+
+.divRedHighlight1 {
+    background-color: rgb(24, 0, 163);
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+}
