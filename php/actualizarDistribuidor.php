@@ -84,7 +84,7 @@
 
             $result = $con->query($sql);
 
-            if ($con->field_count) {
+            if ($con->num_rows > 0) {
                 $nombreCompleto = $nombre . " " . $paterno . " " . $materno;
                 $sql = "UPDATE usuarios
                         SET nombre = '$nombreCompleto', usuario = '$usuario', pass = '$pass'
