@@ -172,6 +172,12 @@ input {
     align-items: center;
 }
 
+.centerImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .menuContainer {
     text-align: center;
     padding-top: 10px;

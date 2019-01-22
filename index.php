@@ -14,7 +14,25 @@
     <title>Natural Blue</title>
 </head>
 <body>
-    <div class="container">        
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <img class="centerImg" src="imgs/logo_small.png" />
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <img class="centerImg" src="imgs/control.png" />
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
         <div class="row">
             <div class="col-4">
             </div>
