@@ -199,9 +199,11 @@ function crearUsuario() {
 
     var finalFecha = encFecha + encCFecha;
 
-    var nombre = nombre.replace(' ', '');
-    var usuario = nombre.charAt(nombre.length/2) + nombre.charAt(nombre.length/2 - 1) + nombre.charAt(nombre.length/2 + 1);
-    usuario = usuario + finalFecha;
+    //var nombre = nombre.replace(' ', '');
+    //var usuario = nombre.charAt(nombre.length/2) + nombre.charAt(nombre.length/2 - 1) + nombre.charAt(nombre.length/2 + 1);
+    //usuario = usuario + finalFecha;
+    //Se cambia la creación del nombre de usuario a '0000' + numero de distribuidor
+    var usuario = '000' + $("#tbIdDistribuidor").val();
     $("#tbUsuario").val(usuario);
 
     var pass = nombre.charAt(0) + nombre.charAt(nombre.length - 1) + nombre.charAt(nombre.length/2 + 1);
