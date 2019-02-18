@@ -196,6 +196,9 @@
     $pdf->Ln(0.5);
     $pdf->Cell(0, 0, iconv('UTF-8', 'windows-1252', "Este comprobante no es válido para efectos fiscales."), '0', 0, 'C', false);
 
+    $pdf->Ln(0.5);
+    $pdf->Cell(0, 0, iconv('UTF-8', 'windows-1252', "Siembra la abundancia y cosecharás prosperidad."), '0', 0, 'C', false);
+
     $pdf->Output();
     
 ?>
