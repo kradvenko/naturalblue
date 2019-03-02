@@ -13,7 +13,7 @@
 
         $sql = "SELECT *
                 FROM distribuidores
-                WHERE nombre Like '%$term%' Or apellidopaterno Like '%$term%' Or apellidomaterno Like '%$term%'";
+                WHERE nombre Like '%$term%' Or apellidopaterno Like '%$term%' Or apellidomaterno Like '%$term%' Or iddistribuidor Like '%$term%'";
 
         $result = $con->query($sql);
 

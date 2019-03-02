@@ -79,7 +79,7 @@
     //$pdf = new FPDF('P', 'mm', 'Letter');
     
 
-    $pdf = new FPDF('P', 'cm', array(7.5, $rows + 160));
+    $pdf = new FPDF('P', 'cm', array(7.5, $rows + 16));
 
     $pdf->SetMargins(0.1, 0.0, 0.1, 10);
 
