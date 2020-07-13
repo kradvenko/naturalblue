@@ -1,8 +1,8 @@
 <?php
     $hn = "localhost";
     $un = "root";
-    $pw = "masterkey";
-    $db = "naturalblue";
+    $pw = "";
+    $db = "1058332_naturalblue";
 
     /*$hn = "host232.hostmonster.com";
     $un = "wmdcommx_natural";
